@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.sp
 import com.thisandu.todoapp.ui.components.EmptyState
 import com.thisandu.todoapp.ui.components.FilterChips
 import com.thisandu.todoapp.ui.components.SearchBar
+import com.thisandu.todoapp.ui.components.TaskStatistics
 
 data class TodoTask(
     val title: String,
@@ -95,6 +96,10 @@ fun HomeScreen() {
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold
             )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            TaskStatistics()
 
             Spacer(modifier = Modifier.height(16.dp))
 
