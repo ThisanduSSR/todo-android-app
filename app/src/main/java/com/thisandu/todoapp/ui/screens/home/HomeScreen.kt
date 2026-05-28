@@ -13,6 +13,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.thisandu.todoapp.ui.components.EmptyState
+import com.thisandu.todoapp.ui.components.SearchBar
 
 data class TodoTask(
     val title: String,
@@ -93,6 +94,10 @@ fun HomeScreen() {
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold
             )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            SearchBar()
 
             Spacer(modifier = Modifier.height(20.dp))
 
