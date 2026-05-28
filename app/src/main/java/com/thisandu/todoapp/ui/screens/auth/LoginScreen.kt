@@ -24,15 +24,24 @@ fun LoginScreen() {
 
         Text(
             text = "Todo App",
-            fontSize = 32.sp,
+            fontSize = 34.sp,
             fontWeight = FontWeight.Bold
         )
 
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            text = "Manage your daily tasks easily",
+
+            style = MaterialTheme.typography.bodyLarge
+        )
+
+        Spacer(modifier = Modifier.height(40.dp))
 
         OutlinedTextField(
             value = "",
             onValueChange = {},
+
             label = {
                 Text("Email")
             },
@@ -40,11 +49,12 @@ fun LoginScreen() {
             modifier = Modifier.fillMaxWidth()
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(18.dp))
 
         OutlinedTextField(
             value = "",
             onValueChange = {},
+
             label = {
                 Text("Password")
             },
@@ -52,15 +62,31 @@ fun LoginScreen() {
             modifier = Modifier.fillMaxWidth()
         )
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(28.dp))
 
         Button(
             onClick = {},
 
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(54.dp)
         ) {
 
-            Text("Login")
+            Text(
+                text = "Login",
+                fontSize = 18.sp
+            )
+        }
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        TextButton(
+            onClick = {}
+        ) {
+
+            Text(
+                text = "Create New Account"
+            )
         }
     }
 }
