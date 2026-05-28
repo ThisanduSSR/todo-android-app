@@ -5,6 +5,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -30,6 +31,41 @@ fun HomeScreen() {
 
     Scaffold(
 
+        topBar = {
+
+            TopAppBar(
+
+                title = {
+
+                    Column {
+
+                        Text(
+                            text = "Hello Thisandu ??",
+                            fontWeight = FontWeight.Bold
+                        )
+
+                        Text(
+                            text = "Manage your daily tasks",
+                            fontSize = 13.sp
+                        )
+                    }
+                },
+
+                actions = {
+
+                    IconButton(
+                        onClick = {}
+                    ) {
+
+                        Icon(
+                            imageVector = Icons.Default.Person,
+                            contentDescription = "Profile"
+                        )
+                    }
+                }
+            )
+        },
+
         floatingActionButton = {
 
             FloatingActionButton(
@@ -53,8 +89,8 @@ fun HomeScreen() {
         ) {
 
             Text(
-                text = "My Tasks",
-                fontSize = 30.sp,
+                text = "Today's Tasks",
+                fontSize = 28.sp,
                 fontWeight = FontWeight.Bold
             )
 
