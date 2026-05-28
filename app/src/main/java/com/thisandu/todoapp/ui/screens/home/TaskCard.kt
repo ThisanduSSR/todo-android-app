@@ -17,52 +17,66 @@ fun TaskCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 12.dp),
+            .padding(bottom = 14.dp),
 
         elevation = CardDefaults.cardElevation(
-            defaultElevation = 6.dp
+            defaultElevation = 8.dp
         )
     ) {
 
-        Row(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(18.dp),
-
-            horizontalArrangement =
-            Arrangement.SpaceBetween
+                .padding(18.dp)
         ) {
 
-            Column {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+
+                horizontalArrangement =
+                Arrangement.SpaceBetween
+            ) {
 
                 Text(
                     text = title,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.SemiBold
+                    fontSize = 19.sp,
+                    fontWeight = FontWeight.Bold
                 )
 
-                Spacer(
-                    modifier = Modifier.height(6.dp)
-                )
-
-                Text(
-                    text =
-                    if (completed)
-                        "Completed"
-                    else
-                        "Pending",
-
-                    color =
-                    if (completed)
-                        MaterialTheme.colorScheme.primary
-                    else
-                        MaterialTheme.colorScheme.error
+                Checkbox(
+                    checked = completed,
+                    onCheckedChange = {}
                 )
             }
 
-            Checkbox(
-                checked = completed,
-                onCheckedChange = {}
+            Spacer(
+                modifier = Modifier.height(8.dp)
+            )
+
+            Text(
+                text =
+                "Complete this task before deadline.",
+
+                style = MaterialTheme.typography.bodyMedium
+            )
+
+            Spacer(
+                modifier = Modifier.height(12.dp)
+            )
+
+            AssistChip(
+                onClick = {},
+
+                label = {
+
+                    Text(
+                        text =
+                        if (completed)
+                            "Completed"
+                        else
+                            "Pending"
+                    )
+                }
             )
         }
     }
