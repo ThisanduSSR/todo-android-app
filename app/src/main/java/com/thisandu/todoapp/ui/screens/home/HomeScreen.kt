@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.thisandu.todoapp.ui.components.EmptyState
 
 data class TodoTask(
     val title: String,
@@ -59,14 +60,21 @@ fun HomeScreen() {
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            LazyColumn {
+            if (tasks.isEmpty()) {
 
-                items(tasks) { task ->
+                EmptyState()
 
-                    TaskCard(
-                        title = task.title,
-                        completed = task.completed
-                    )
+            } else {
+
+                LazyColumn {
+
+                    items(tasks) { task ->
+
+                        TaskCard(
+                            title = task.title,
+                            completed = task.completed
+                        )
+                    }
                 }
             }
         }
