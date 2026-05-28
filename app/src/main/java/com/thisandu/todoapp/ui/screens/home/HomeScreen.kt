@@ -63,32 +63,10 @@ fun HomeScreen() {
 
                 items(tasks) { task ->
 
-                    Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(bottom = 12.dp)
-                    ) {
-
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(16.dp),
-
-                            horizontalArrangement =
-                            Arrangement.SpaceBetween
-                        ) {
-
-                            Text(
-                                text = task.title,
-                                fontSize = 18.sp
-                            )
-
-                            Checkbox(
-                                checked = task.completed,
-                                onCheckedChange = {}
-                            )
-                        }
-                    }
+                    TaskCard(
+                        title = task.title,
+                        completed = task.completed
+                    )
                 }
             }
         }
