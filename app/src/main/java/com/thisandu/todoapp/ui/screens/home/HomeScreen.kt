@@ -13,6 +13,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.thisandu.todoapp.ui.components.EmptyState
+import com.thisandu.todoapp.ui.components.FilterChips
 import com.thisandu.todoapp.ui.components.SearchBar
 
 data class TodoTask(
@@ -98,6 +99,10 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.height(16.dp))
 
             SearchBar()
+
+            Spacer(modifier = Modifier.height(14.dp))
+
+            FilterChips()
 
             Spacer(modifier = Modifier.height(20.dp))
 
